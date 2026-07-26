@@ -1,0 +1,63 @@
+---
+# ============================================================
+#  嵌入式驱动 C 代码格式 Ruler  (clang-format)
+#  适用范围: 本仓库所有 .c / .h 驱动源码
+#  风格: 对齐现有代码 —— K&R 大括号同行, 4 空格缩进, 无 Tab
+# ============================================================
+BasedOnStyle: LLVM
+Language: C
+
+# ---- 基础排版 ----
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+ContinuationIndentWidth: 4
+IndentCaseLabels: false          # case 与 switch 同列
+AccessModifierOffset: -4
+
+# ---- 大括号 (K&R, 左括号同行) ----
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
+
+# ---- 指针 / 引用 (靠变量名: int *p) ----
+PointerAlignment: Right
+DerivePointerAlignment: false
+
+# ---- 空格 ----
+SpaceAfterCStyleCast: false
+SpaceBeforeParen: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpacesInContainerLiterals: false
+
+# ---- 换行 ----
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BinPackArguments: false
+BinPackParameters: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllArgumentsOnNextLine: false
+PenaltyBreakBeforeFirstCallParameter: 100
+PenaltyBreakComment: 60
+PenaltyBreakString: 300
+PenaltyExcessCharacter: 10
+
+# ---- 预处理 / 头文件 ----
+IndentPPDirectives: AfterHash
+IncludeBlocks: Preserve          # 驱动头文件顺序通常手动管理, 不自动排序
+SortIncludes: false
+
+# ---- 其他 ----
+FixNamespaceComments: true
+InsertNewlineAtEOF: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+ReflowComments: false
+SeparateDefinitionBlocks: Leave
+...
